@@ -420,6 +420,9 @@ half DirectBRDFSpecular(BRDFData brdfData, half3 normalWS, half3 lightDirectionW
     specularTerm = clamp(specularTerm, 0.0, 100.0); // Prevent FP16 overflow on mobiles
 #endif
 
+    specularTerm = clamp(specularTerm, 0.0, 1.0); // Prevent FP16 overflow on mobiles
+
+
 return specularTerm;
 }
 
